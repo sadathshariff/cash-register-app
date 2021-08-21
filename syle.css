@@ -1,0 +1,92 @@
+* {
+  --primary-color: #9fa3a1;
+  --secondary-color: #111827;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  min-height: 300px;
+  margin: 0 auto;
+  border: 1px solid gray;
+  box-shadow: 15px 15px 10px gray;
+  background-color: var(--primary-color);
+  padding: 1.4rem;
+}
+
+.heading,
+.description {
+  text-align: center;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 20px;
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  padding: 1.5rem 1rem 0.5rem;
+}
+input {
+  width: 95%;
+  padding: 0.7rem;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  display: block;
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+
+#check-button {
+  width: 30%;
+  margin: 1rem auto 1rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+#error-message {
+  padding: 1rem;
+  color: wheat;
+  font-size: 1.5rem;
+}
+
+table,
+th,
+td {
+  padding: 0.3rem;
+  color: var(--secondary-color);
+  background-color: whitesmoke;
+  border: 2px solid var(--secondary-color);
+  border-collapse: collapse;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.numberOfNotes {
+  background-color: whitesmoke;
+  color: darkblue;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+caption {
+  font-size: 1.3rem;
+}
+th,
+td {
+  word-wrap: break-word;
+}
