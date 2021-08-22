@@ -3,30 +3,23 @@ const cashGiven = document.querySelector("#cash-given");
 const checkButton = document.querySelector("#check-button");
 const errorMessage = document.querySelector("#error-message");
 const noOfNotes = document.querySelectorAll(".noOfNotes");
+const table = document.querySelector(".change-table");
 
 //available Notes
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 
 checkButton.addEventListener("click", () => {
-  hideMessage(); //hiding the Error Message
-
+  hideMessage();
   if (billAmount.value > 0) {
-    //checking if the billAmount is > 0
-
     if (cashGiven.value >= billAmount.value) {
-      const amountToBeReturned = cashGiven.value - billAmount.value; //sub to get the remaining amount to return
-
+      const amountToBeReturned = cashGiven.value - billAmount.value;
       calculateChange(amountToBeReturned);
       noChangeToReturn(cashGiven, billAmount);
-    } else if (cashGiven.value > 0 && cashGiven.value < billAmount) {
-      showMessage(
-        "Cash given is less than Bill Amount, You are running shortage of money"
-      );
     } else {
-      showMessage("You want to wash Dishes !!");
+      showMessage("Please pay the exact Amount or You wanna Wash Dishes!!");
     }
   } else {
-    showMessage("Invalid Bill Amount");
+    showMessage("Invalid Bill Aamount!!");
   }
 });
 
@@ -44,9 +37,10 @@ function calculateChange(amountToBeReturned) {
 }
 
 function noChangeToReturn(cashGiven, billAmount) {
-  let noChangeToReturn = billAmount.value - cashGiven.value;
-  if (noChangeToReturn < 1) {
+  let noChangeToReturn = cashGiven.value - billAmount.value;
+  if (noChangeToReturn == 0) {
     showMessage("No Change to return :)");
+    hideTable();
   }
 }
 
@@ -57,4 +51,9 @@ function hideMessage() {
 function showMessage(errorMsg) {
   errorMessage.innerText = errorMsg;
   errorMessage.style.display = "block";
+  hideTable();
+}
+
+function hideTable() {
+  table.style.display = "none";
 }
