@@ -8,20 +8,20 @@ const table = document.querySelector(".change-table");
 //available Notes
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 
-checkButton.addEventListener("click", () => {
+function clickHandler() {
   hideMessage();
-  if (billAmount.value > 0) {
-    if (cashGiven.value >= billAmount.value) {
-      const amountToBeReturned = cashGiven.value - billAmount.value;
+  let billAmountValue = Number(billAmount.value);
+  let cashGivenValue = Number(cashGiven.value);
+  if (billAmountValue > 0 && cashGivenValue > 0) {
+    if (cashGivenValue >= billAmountValue) {
+      const amountToBeReturned = cashGivenValue - billAmountValue;
       calculateChange(amountToBeReturned);
-      noChangeToReturn(cashGiven, billAmount);
-    } else {
-      showMessage("Please pay the exact Amount or You wanna Wash Dishes!!");
+      noChangeToReturn(cashGivenValue, billAmountValue);
     }
   } else {
-    showMessage("Invalid Bill Aamount!!");
+    showMessage("Invalid Bill Amount");
   }
-});
+}
 
 function calculateChange(amountToBeReturned) {
   for (let i = 0; i < availableNotes.length; i++) {
@@ -36,11 +36,10 @@ function calculateChange(amountToBeReturned) {
   }
 }
 
-function noChangeToReturn(cashGiven, billAmount) {
-  let noChangeToReturn = cashGiven.value - billAmount.value;
+function noChangeToReturn(cashGivenValue, billAmountValue) {
+  let noChangeToReturn = cashGivenValue - billAmountValue;
   if (noChangeToReturn == 0) {
     showMessage("No Change to return :)");
-    hideTable();
   }
 }
 
@@ -51,9 +50,6 @@ function hideMessage() {
 function showMessage(errorMsg) {
   errorMessage.innerText = errorMsg;
   errorMessage.style.display = "block";
-  hideTable();
 }
 
-function hideTable() {
-  table.style.display = "none";
-}
+checkButton.addEventListener("click", clickHandler);
