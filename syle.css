@@ -45,7 +45,8 @@ input {
   border-radius: 10px;
 }
 
-#check-button {
+#check-button,
+#next-btn {
   width: 30%;
   margin: 1rem auto 1rem;
   padding: 0.5rem 1rem;
@@ -53,6 +54,11 @@ input {
   border-radius: 10px;
   font-size: 1.1rem;
   font-weight: bold;
+}
+#check-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #error-message {

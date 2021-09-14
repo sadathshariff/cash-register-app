@@ -17,40 +17,43 @@
       <label for="bill-amount">Bill Amount</label>
       <input type="number" id="bill-amount" />
 
-      <!-- <button>Next</button> -->
+      <button id="next-btn">Next</button>
 
-      <label for="cash-given">Cash given</label>
-      <input type="number" id="cash-given" />
-      <button id="check-button">Check</button>
+      <div class="cash-given-div">
+        <label for="cash-given">Cash given</label>
+        <input type="number" id="cash-given" />
+        <button id="check-button">Check</button>
+      </div>
 
       <p id="error-message"></p>
 
-      <div class="changeReturn"></div>
-      <table class="change-table">
-        <caption>
-          Return Change
-        </caption>
-        <tr>
-          <th>No. of Notes</th>
-          <th class="noOfNotes"></th>
-          <th class="noOfNotes"></th>
-          <th class="noOfNotes"></th>
-          <th class="noOfNotes"></th>
-          <th class="noOfNotes"></th>
-          <th class="noOfNotes"></th>
-          <th class="noOfNotes"></th>
-        </tr>
-        <tr>
-          <th>Note</th>
-          <td>2000</td>
-          <td>500</td>
-          <td>100</td>
-          <td>20</td>
-          <td>10</td>
-          <td>5</td>
-          <td>1</td>
-        </tr>
-      </table>
+      <div class="changeReturn">
+        <table class="change-table">
+          <caption>
+            Return Change
+          </caption>
+          <tr>
+            <th>No. of Notes</th>
+            <th class="noOfNotes"></th>
+            <th class="noOfNotes"></th>
+            <th class="noOfNotes"></th>
+            <th class="noOfNotes"></th>
+            <th class="noOfNotes"></th>
+            <th class="noOfNotes"></th>
+            <th class="noOfNotes"></th>
+          </tr>
+          <tr>
+            <th>Note</th>
+            <td>2000</td>
+            <td>500</td>
+            <td>100</td>
+            <td>20</td>
+            <td>10</td>
+            <td>5</td>
+            <td>1</td>
+          </tr>
+        </table>
+      </div>
     </div>
 
     <script src="index.js"></script>
