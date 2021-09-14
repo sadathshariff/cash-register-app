@@ -5,8 +5,22 @@ const errorMessage = document.querySelector("#error-message");
 const noOfNotes = document.querySelectorAll(".noOfNotes");
 const table = document.querySelector(".change-table");
 
+const cashGivenDiv = document.querySelector(".cash-given-div");
+const nextBtn = document.querySelector("#next-btn");
+
 //available Notes
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
+cashGivenDiv.style.display = "none";
+function nextBtnHandler() {
+  if (Number(billAmount.value > 0)) {
+    cashGivenDiv.style.display = "block";
+    nextBtn.style.display = "none";
+  } else {
+    showMessage("Enter Valid Bill Amount");
+  }
+}
+
+nextBtn.addEventListener("click", nextBtnHandler);
 
 function clickHandler() {
   hideMessage();
