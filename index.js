@@ -7,10 +7,12 @@ const table = document.querySelector(".change-table");
 
 const cashGivenDiv = document.querySelector(".cash-given-div");
 const nextBtn = document.querySelector("#next-btn");
+const changeReturnDiv = document.querySelector(".changeReturn");
 
 //available Notes
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 cashGivenDiv.style.display = "none";
+changeReturnDiv.style.display = "none";
 function nextBtnHandler() {
   if (Number(billAmount.value > 0)) {
     cashGivenDiv.style.display = "block";
@@ -28,6 +30,7 @@ function clickHandler() {
   let cashGivenValue = Number(cashGiven.value);
   if (billAmountValue > 0 && cashGivenValue > 0) {
     if (cashGivenValue >= billAmountValue) {
+      changeReturnDiv.style.display = "block";
       const amountToBeReturned = cashGivenValue - billAmountValue;
       calculateChange(amountToBeReturned);
       noChangeToReturn(cashGivenValue, billAmountValue);
@@ -35,7 +38,7 @@ function clickHandler() {
       showMessage("Cash given is less");
     }
   } else {
-    showMessage("Invalid Bill Amount");
+    showMessage("Invalid Amount");
   }
 }
 
