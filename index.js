@@ -17,6 +17,8 @@ function clickHandler() {
       const amountToBeReturned = cashGivenValue - billAmountValue;
       calculateChange(amountToBeReturned);
       noChangeToReturn(cashGivenValue, billAmountValue);
+    } else {
+      showMessage("Cash given is less");
     }
   } else {
     showMessage("Invalid Bill Amount");
