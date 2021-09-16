@@ -20,6 +20,11 @@ function nextBtnHandler() {
   } else {
     showMessage("Enter Valid Bill Amount");
   }
+  if (Math.sign(billAmount.value) === -1) {
+    showMessage("Negative Amount");
+  } else {
+    errorMessage.style.display = "none";
+  }
 }
 
 nextBtn.addEventListener("click", nextBtnHandler);
@@ -28,17 +33,21 @@ function clickHandler() {
   hideMessage();
   let billAmountValue = Number(billAmount.value);
   let cashGivenValue = Number(cashGiven.value);
+
   if (billAmountValue > 0 && cashGivenValue > 0) {
     if (cashGivenValue >= billAmountValue) {
       changeReturnDiv.style.display = "block";
+
       const amountToBeReturned = cashGivenValue - billAmountValue;
       calculateChange(amountToBeReturned);
       noChangeToReturn(cashGivenValue, billAmountValue);
     } else {
       showMessage("Cash given is less");
+      changeReturnDiv.style.display = "none";
     }
   } else {
     showMessage("Invalid Amount");
+    changeReturnDiv.style.display = "none";
   }
 }
 
@@ -59,6 +68,7 @@ function noChangeToReturn(cashGivenValue, billAmountValue) {
   let noChangeToReturn = cashGivenValue - billAmountValue;
   if (noChangeToReturn == 0) {
     showMessage("No Change to return :)");
+    changeReturnDiv.style.display = "none";
   }
 }
 
