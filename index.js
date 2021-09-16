@@ -17,14 +17,21 @@ function nextBtnHandler() {
   if (Number(billAmount.value > 0)) {
     cashGivenDiv.style.display = "block";
     nextBtn.style.display = "none";
+    billAmount.disabled = true;
   } else {
     showMessage("Enter Valid Bill Amount");
   }
-  if (Math.sign(billAmount.value) === -1) {
-    showMessage("Negative Amount");
+  if (Math.sign(billAmount.value) === -1 || Math.sign(billAmount.value) === 0) {
+    showMessage("Bill cannot be Negative/Zero");
   } else {
     errorMessage.style.display = "none";
   }
+
+  // if (Math.sign(billAmount.value) === 0) {
+  //   showMessage("Amount is zero");
+  // } else {
+  //   errorMessage.style.display = "none";
+  // }
 }
 
 nextBtn.addEventListener("click", nextBtnHandler);
@@ -46,7 +53,7 @@ function clickHandler() {
       changeReturnDiv.style.display = "none";
     }
   } else {
-    showMessage("Invalid Amount");
+    showMessage("Invalid Cash Amount");
     changeReturnDiv.style.display = "none";
   }
 }

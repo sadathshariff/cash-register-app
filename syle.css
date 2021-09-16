@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+body {
+  font-family: "Nunito", sans-serif;
+}
 * {
   --primary-color: #5ef5a9;
   --secondary-color: #111827;
