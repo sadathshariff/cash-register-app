@@ -17,7 +17,7 @@ function nextBtnHandler() {
   if (Number(billAmount.value > 0)) {
     cashGivenDiv.style.display = "block";
     nextBtn.style.display = "none";
-    billAmount.disabled = true;
+    // billAmount.disabled = true;
   } else {
     showMessage("Enter Valid Bill Amount");
   }
@@ -53,7 +53,7 @@ function clickHandler() {
       changeReturnDiv.style.display = "none";
     }
   } else {
-    showMessage("Invalid Cash Amount");
+    showMessage("Invalid  Amount");
     changeReturnDiv.style.display = "none";
   }
 }
